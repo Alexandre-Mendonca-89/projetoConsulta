@@ -47,6 +47,4 @@ public class MedicoDto implements Serializable{
 	public void setArea(String area) {
 		this.area = area;
 	}
-
-	
 }

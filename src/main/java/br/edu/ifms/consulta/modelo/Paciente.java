@@ -23,8 +23,8 @@ public class Paciente implements Serializable{
 	private String nome;
 	private int cpf;
 	
-	@ManyToMany(mappedBy = "medicos")
-	private List<Medico> consulta = new ArrayList<Medico>();
+	@ManyToMany(mappedBy = "pacientes")
+	private List<Medico> medicos = new ArrayList<Medico>();
 	
 	public Paciente() {
 		// TODO Auto-generated constructor stub
@@ -54,13 +54,15 @@ public class Paciente implements Serializable{
 		this.cpf = cpf;
 	}
 
-	public List<Medico> getConsulta() {
-		return consulta;
+	public List<Medico> getMedicos() {
+		return medicos;
 	}
 
-	public void setConsulta(List<Medico> consulta) {
-		this.consulta = consulta;
+	public void setMedicos(List<Medico> medicos) {
+		this.medicos = medicos;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
@@ -79,12 +81,11 @@ public class Paciente implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
-	public Paciente(Long id, String nome, int cpf, List<Medico> consulta) {
+	public Paciente(Long id, String nome, int cpf) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.consulta = consulta;
 	}
 	
 }

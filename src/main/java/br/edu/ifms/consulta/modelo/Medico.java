@@ -28,10 +28,10 @@ public class Medico implements Serializable{
 	@ManyToMany
 	@JoinTable(
 			name = "Paciente_Medico",
-			joinColumns = @JoinColumn(name = "paciente_id"),
-			inverseJoinColumns = @JoinColumn(name = "medico_id")
+			joinColumns = @JoinColumn(name = "medico_id"),
+			inverseJoinColumns = @JoinColumn(name = "paciente_id")
 			)
-	private List<Medico> medicos = new ArrayList<Medico>();
+	private List<Paciente> pacientes = new ArrayList<Paciente>();
 	
 	public Medico() {
 		// TODO Auto-generated constructor stub
@@ -61,12 +61,12 @@ public class Medico implements Serializable{
 		this.area = area;
 	}
 
-	public List<Medico> getMedico() {
-		return medicos;
+	public List<Paciente> getMedico() {
+		return pacientes;
 	}
 
 	public void setMedico(List<Medico> medico) {
-		this.medicos = medicos;
+		this.pacientes = pacientes;
 	}
 
 	@Override
@@ -86,11 +86,10 @@ public class Medico implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
-	public Medico(Long id, String nome, String area, List<Medico> medico) {
+	public Medico(Long id, String nome, String area) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.area = area;
-		this.medicos = medicos;
 	}
 }

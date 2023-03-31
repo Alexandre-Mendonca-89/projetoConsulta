@@ -42,7 +42,7 @@ public class MedicoService {
 	}
 	
 	public Medico fromDto(MedicoDto medicoDto) {
-		return new Medico(medicoDto.getId(),medicoDto.getNome(),medicoDto.getArea(),null);
+		return new Medico(medicoDto.getId(),medicoDto.getNome(),medicoDto.getArea());
 	}
 }
 

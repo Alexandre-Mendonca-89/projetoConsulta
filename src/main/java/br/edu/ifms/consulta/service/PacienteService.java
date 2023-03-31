@@ -42,7 +42,7 @@ public class PacienteService {
 	}
 	
 	public Paciente fromDto(PacienteDto pacienteDto) {
-		return new Paciente(pacienteDto.getId(),pacienteDto.getNome(),pacienteDto.getCpf(),null);
+		return new Paciente(pacienteDto.getId(),pacienteDto.getNome(),pacienteDto.getCpf());
 	}
 }
 
